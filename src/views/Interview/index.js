@@ -2,7 +2,7 @@ import { Component } from "react";
 
 import styles from "./styles.scss";
 
-class Core extends Component {
+class Interview extends Component {
     render() {
         return (
             <div className={ styles.main }>
@@ -12,4 +12,4 @@ class Core extends Component {
     }
 }
 
-export default Core;
+export default Interview;
