@@ -1,3 +1,7 @@
+:root {
+	font-size: 16px;
+}
+
 html, body {
 	height: 100%;
 	overflow: hidden;
@@ -6,12 +10,20 @@ html, body {
 }
 
 .main {
-    padding: 50px;
-	height: calc(100vh - 100px);
-	display: flex;
-	flex-direction: column;
+	display: grid;
+	grid-template-columns: 15rem auto 15rem;
+	grid-template-rows: 5rem 1fr 5rem;
+	grid-template-areas: "left-side header right-side"
+		"left-side content right-side"
+		"left-side footer right-side";
+	height: 100vh;
 
-	>div:first-child {
-		margin-bottom: 40px;
+	>div {
+		border: 1px solid red;
+	}
+
+	.pokemonsWrapper {
+		grid-area: content;
+		padding: 1rem;
 	}
 }
