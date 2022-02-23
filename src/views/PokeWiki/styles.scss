@@ -13,13 +13,13 @@ html, body {
 	display: grid;
 	grid-template-columns: 15rem auto 15rem;
 	grid-template-rows: 5rem 1fr 5rem;
-	grid-template-areas: "left-side header right-side"
+	grid-template-areas: "header header header"
 		"left-side content right-side"
 		"left-side footer right-side";
 	height: 100vh;
 
-	>div {
-		border: 1px solid red;
+	.header {
+		grid-area: header;
 	}
 
 	.pokemonsWrapper {
