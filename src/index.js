@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Interview from './views/Interview';
+import PokeWiki from './views/PokeWiki';
 
-ReactDOM.render(<Interview />, document.getElementById('root'));
+ReactDOM.render(<PokeWiki />, document.getElementById('root'));
