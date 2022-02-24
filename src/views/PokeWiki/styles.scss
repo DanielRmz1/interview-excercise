@@ -11,7 +11,7 @@ html, body {
 
 .main {
 	display: grid;
-	grid-template-columns: 15rem auto 15rem;
+	grid-template-columns: 15% auto 15%;
 	grid-template-rows: 5rem 1fr 5rem;
 	grid-template-areas: "header header header"
 		"left-side content right-side"
@@ -20,10 +20,16 @@ html, body {
 
 	.header {
 		grid-area: header;
+		z-index: 10;
 	}
 
 	.pokemonsWrapper {
 		grid-area: content;
 		padding: 1.5rem 1rem;
+		overflow-y: auto;
+
+		>:not(:last-child) {
+			margin-bottom: 1rem;
+		}
 	}
 }

@@ -1,5 +1,5 @@
 // Libraries
-import { Component } from "react";
+import React, { Component } from "react";
 
 // Components
 import Pokemon from "../../components/Pokemon";
@@ -10,16 +10,33 @@ import styles from "./styles.scss";
 import { getPokemons } from "../../libs/api";
 
 class PokeWiki extends Component {
-	componentDidMount = async() => {
-		const result = await getPokemons();
-		console.log(result);
+	constructor(props) {
+		super(props);
+		this.pokemonsContainerRef = React.createRef();
 	}
+
+	pokemonsContainerRef = null;
+
+	state = {
+		pokemons: null
+	}
+
+	componentDidMount = async() => {
+		const { results } = await getPokemons();
+		this.setState({ pokemons: results });
+	}
+
     render() {
+		const { pokemons } = this.state;
         return (
             <div className={ styles.main }>
 				<Header className={ styles.header } />
 				<div className={ styles.pokemonsWrapper }>
-					<Pokemon id={ 1 } />
+					{
+						pokemons
+							? pokemons.map((data, index) => <Pokemon key={ index } { ...data } />)
+							: "Loading"
+					}
 				</div>
 			</div>
         );
