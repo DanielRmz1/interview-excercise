@@ -15,7 +15,7 @@ class Header extends React.Component {
 		const { className } = this.props;
 		return (
 			<div className={ classnames(className, styles.header) }>
-				PokeApi Challenge
+				Interview excercise
 			</div>
 		);
 	}
