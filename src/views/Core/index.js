@@ -53,7 +53,7 @@ class Core extends Component {
 		const { actualPage, data } = this.state;
 		this.setState({ loading: true });
 		const { nodes } = await getData(actualPage);
-		const newData = [...nodes, ...data];
+		const newData = [...data, ...nodes];
 		this.setState({ data: newData, loading: false });
 	}
 

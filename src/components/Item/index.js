@@ -11,9 +11,10 @@ class Item extends React.Component {
 	render() {
 		const { title, photo } = this.props;
 		return (
-			<div className={ styles.item }>
-				<img src={ photo } alt={'title'}/>
-				{ title }
+			<div className={ styles.item } style={ { backgroundImage: `url("${photo}")` } }>
+				<div className={ styles.detail }>
+					{ title }
+				</div>
 			</div>
 		)
 	}
