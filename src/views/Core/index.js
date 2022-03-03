@@ -64,10 +64,10 @@ class Core extends Component {
 				<Header className={ styles.header } />
 				<div className={ styles.items }>
 					{
-						data && data.map(({ node: { title, field_photo_image_section }}, index) => (
+						data && data.map(({ node: { title, ImageStyle_thumbnail }}, index) => (
 							<Item
 								title={ title }
-								photo={ `https://www.pinkvilla.com${field_photo_image_section}` }
+								photo={ `https://www.pinkvilla.com${ImageStyle_thumbnail}` }
 								key={ index }
 							/>
 						))
