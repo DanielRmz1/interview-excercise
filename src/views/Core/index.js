@@ -9,6 +9,7 @@ import Item from "../../components/Item";
 
 // Assets
 import styles from "./styles.scss";
+import Loader from "../../components/Loader";
 
 class Core extends Component {
 	constructor(props) {
@@ -62,26 +63,26 @@ class Core extends Component {
         return (
             <div className={ styles.main }>
 				<Header className={ styles.header } />
-				<div className={ styles.items }>
-					{
-						data && data.map(({ node: { title, ImageStyle_thumbnail }}, index) => (
-							<Item
-								title={ title }
-								photo={ `https://www.pinkvilla.com${ImageStyle_thumbnail}` }
-								key={ index }
-							/>
-						))
-					}
-					{
-						<div
-							className={
-								classnames({ [styles.loading]: true, [styles.show]: loading })
-							}
-							ref={ this.loadingRef }
-						>
-							Loading...
-						</div>
-					}
+				<div className={ styles.content }>
+					<div className={ styles.items }>
+						{
+							data && data.map(({ node: { title, ImageStyle_thumbnail }}, index) => (
+								<Item
+									title={ title }
+									photo={ `https://www.pinkvilla.com${ImageStyle_thumbnail}` }
+									key={ index }
+								/>
+							))
+						}
+					</div>
+					<div
+						className={
+							classnames({ [styles.loading]: true, [styles.show]: loading })
+						}
+						ref={ this.loadingRef }
+					>
+						<Loader />
+					</div>
 				</div>
 			</div>
         );
