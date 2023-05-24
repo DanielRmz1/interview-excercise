@@ -53,8 +53,8 @@ class Core extends Component {
 	fetchData = async() => {
 		const { actualPage, data } = this.state;
 		this.setState({ loading: true });
-		const { nodes } = await getData(actualPage);
-		const newData = [...data, ...nodes];
+		const { results } = await getData(actualPage);
+		const newData = [...data, ...results];
 		this.setState({ data: newData, loading: false });
 	}
 
@@ -66,10 +66,10 @@ class Core extends Component {
 				<div className={ styles.content }>
 					<div className={ styles.items }>
 						{
-							data && data.map(({ node: { title, ImageStyle_thumbnail }}, index) => (
+							data && data.map(({ name }, index) => (
 								<Item
-									title={ title }
-									photo={ `https://www.pinkvilla.com${ImageStyle_thumbnail}` }
+									title={ name }
+									id={ index + 1}
 									key={ index }
 								/>
 							))

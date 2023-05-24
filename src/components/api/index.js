@@ -7,6 +7,6 @@ export const call = async(url) => {
 };
 
 export const getData = async(page) => {
-	const url = `https://www.pinkvilla.com/photo-gallery-feed-page/page/${page}`;
+	const url = `https://pokeapi.co/api/v2/pokemon?limit=10&offset=${page}`; // `https://www.pinkvilla.com/photo-gallery-feed-page/page/${page}`;
 	return await call(url);
 }
