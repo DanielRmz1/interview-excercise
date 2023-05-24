@@ -24,7 +24,7 @@ jobs:
 
     - name: Build
       run: |
-        webpack --mode production
+        webpack --mode production --openssl-legacy-provider
 
     - name: Deploy to GH Page
       uses: JamesIves/github-pages-deploy-action@4.1.1
