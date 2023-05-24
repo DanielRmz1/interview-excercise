@@ -24,7 +24,7 @@ jobs:
 
     - name: Build
       run: |
-        webpack --mode production --openssl-legacy-provider
+        NODE_OPTIONS='--openssl-legacy-provider' webpack --mode production
 
     - name: Deploy to GH Page
       uses: JamesIves/github-pages-deploy-action@4.1.1
